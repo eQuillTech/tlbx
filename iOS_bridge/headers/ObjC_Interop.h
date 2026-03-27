@@ -10,11 +10,13 @@
 #define _OBJC_INTEROP_
 
 #import <CoreGraphics/CoreGraphics.h>
+#include <TargetConditionals.h>
 
-#if defined(TARGET_IOS) || defined(TARGET_TVOS)
+#if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
 #define PlatformFont UIFont
 #else
+#import <AppKit/AppKit.h>
 #define PlatformFont NSFont
 #endif
 
